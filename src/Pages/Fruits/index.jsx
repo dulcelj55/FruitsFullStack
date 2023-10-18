@@ -6,25 +6,19 @@ const Fruits = () => {
     useEffect(()=>{
         axios({
             method: "GET",
-            url: "http://localhost:3001/fruits",
+            url: "/fruits",
         }).then((res)=>{
             console.log(res.data);
             setFruits(res.data)
         })
     },[])
-console.log(fruits);
+
+
   return (
-    <div>Show all fruits here:
-        <ul>
-        {fruits.map((fruit)=>{
-           return <li key={fruit.name}>
-                <p>{fruit.name}</p>
-                <p>{fruit.color}</p>
-                <p>{fruit.readyToEat}</p>
-            </li>
-        })}
-        </ul>
-    </div>
+    <div>Show all fruits:
+    {fruits.map((fruit) => 
+    <div key={JSON.stringify(fruit)}>{fruit.name} {fruit.color}  {fruit.age}</div>)}
+     </div>
   )
 }
 export default Fruits
