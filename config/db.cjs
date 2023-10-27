@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose');
 
-let connectionString = `mongodb+srv://dulcejaramillo:${process.env.MONGO_PASS}@cluster0.nqkldmx.mongodb.net/?retryWrites=true&w=majority`
+let connectionString = `mongodb+srv://dulcejaramillo:${process.env.MONGO_PASS}@cluster0.nqkldmx.mongodb.net/Food?retryWrites=true&w=majority`
 console.log(connectionString);
 
 mongoose.connect(connectionString, {
